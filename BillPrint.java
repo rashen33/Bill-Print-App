@@ -96,18 +96,68 @@ class BillPrint{
 		
 		float cash;
 		System.out.print("Enter your cash amount :");
-		System.out.println("                                                                  ");
 		cash=input.nextInt();
 		float change = cash - fPrice;
 		
 		
+		System.out.println("                                                                  ");
+		System.out.println("                                                                  ");
 		System.out.println("+----------------+----------------+");
 		System.out.println("|  Net Amount    |   " + fPrice + "       |");
 		System.out.println("+----------------+----------------+");
-		System.out.println("|  Cash          |   " + cash   + "       |");
+		System.out.println("|  Cash          |   " + cash   + "      |");
 		System.out.println("+----------------+----------------+");
-		System.out.println("|  Change        |   " + change   + "     |");
+		System.out.println("|  Change        |   " + change   + "       |");
 		System.out.println("+----------------+----------------+");
 		
+		int fiveThousand = (int)(change/5000);
+		int twoThousand = Math.round(change % 5000)/2000;
+		int oneThousand = Math.round(change % 2000)/1000;
+		int fiveHund = Math.round(change % 1000)/500;
+		int hund = Math.round(change % 500)/100;
+		int fifty = Math.round(change % 100)/50;
+		int twenty = Math.round(change % 100)/20;
+		int ten = Math.round(change % 20)/10;
+		int five = Math.round(change % 10)/5;
+		int two = Math.round(change % 5)/2;
+		int one = Math.round(change % 2)/1;
+
+		int notes = (fiveThousand+twoThousand+oneThousand+fiveHund+hund+fifty+twenty);
+		int coins = (ten+five+two+one);
+	
+		
+		System.out.println("                                                                  ");
+		System.out.println("                                                                  ");
+		System.out.println("                                                                  ");
+		System.out.println("                                                                  ");System.out.println("+----------------+----------------+");
+		System.out.println("|     Value      |     No         |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.5000   |     "+fiveThousand+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.2000   |     "+twoThousand+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.1000   |     "+oneThousand+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.500    |     "+fiveHund+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.100    |     "+hund+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.50     |     "+fifty+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.20     |     "+twenty+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.10     |     "+ten+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.5      |     "+five+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.2      |     "+two+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|      Rs.1      |     "+one+"          |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|  No of Notes   |    "+notes+"           |");
+		System.out.println("+----------------+----------------+");
+		System.out.println("|  No of Coins   |    "+coins+"           |");
+		System.out.println("+----------------+----------------+");
+
 	}
 }
